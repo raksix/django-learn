@@ -10,7 +10,12 @@ def index(request):
 
 def register(request):
     if request.method == "POST":
-        print('Post Request Received')
+        return JsonResponse(
+            {
+                "error": False,
+                "message": "Only POST method is allowed for this endpoint",
+            }
+        )
     else:
         return JsonResponse(
             {
